@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+	body{
+		background-color: skyblue;
+		color: black;
+	}
+	#hi{
+		border-radius: 10%;
+		background-color: orange;
+		padding: 2%;
+	}
+	#new{
+		border-radius: 5px solid gold;
+		background-color: orange;
+		padding: 3%;
+		text-align: center;
+
+	}
+	
+	
+	.listtype{
+		list-style: none;
+	}
+	</style>
+</head>
+	<script src="https://kit.fontawesome.com/908147055f.js" crossorigin="anonymous"></script>
+<body>
+	
+	<p id="demo"></p>
+	<p id="min"></p>
+	
+
+
+	
+	<input  placeholder="enter a todo" id="new"/>
+	<ul>
+		
+	</ul>
+	<button id="hi" onclick="todo()">submit</button>
+	
+	
+	<script type="text/javascript">
+		
+		function todo(){
+			let newTodo=document.getElementById("new").value,todoList=[]
+			if(
+				newTodo===""
+			){
+				alert("enter todo value")
+			}
+			else{
+				add(newTodo)
+			}
+			todoList.push(newTodo)
+			//console.log(todoList);
+			document.getElementById("new").value=""
+		
+
+			
+
+	
+				const d = new Date();
+		document.getElementById("demo").innerHTML = d.getHours();
+		document.getElementById("min").innerHTML = d.getMinutes();
+
+
+	
+			
+			
+		}
+		function add(newValue){
+			let ul=document.querySelector("ul")
+			console.log(ul)
+			let li=document.createElement("li");
+			li.innerHTML=`
+			<span>${newValue}</span>
+			  <button name="checkButton"><i class="fas fa-check-square"></i></button>
+        		<button name="deleteButton" ><i class="fas fa-trash"></i></button>`
+			li.classList.add("listtype")
+			ul.appendChild(li)
+		}
+		
+	</script>
+
+
+
+
+</body>
+</html>
